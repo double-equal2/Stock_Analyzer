@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Company Analyzer</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>Company Analyzer Tool</h1>
+
+        <p>
+            Analyze listed companies using financial metrics and AI-powered insights.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Analyze a Company</h2>
+
+        <form action="/analyze" method="POST">
+
+            <label for="symbol">
+                Enter Stock Symbol
+            </label>
+
+            <br><br>
+
+            <input
+                type="text"
+                id="symbol"
+                name="symbol"
+                placeholder="e.g. TCS.NS"
+                required
+            >
+
+            <p class="help-text">
+                Format:
+                <strong>SYMBOL[DOT]EXCHANGE</strong>
+                <br>
+                Examples:
+                TCS.NS,
+                INFY.NS,
+                HDFCBANK.NS,
+                RELIANCE.NS
+            </p>
+
+            <button type="submit">
+                Analyze
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

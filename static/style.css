@@ -1,0 +1,106 @@
+body{
+    background-color:#121212;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    margin:0;
+    padding:30px;
+}
+
+.container{
+    width:80%;
+    margin:auto;
+}
+
+.card{
+    background-color:#1e1e1e;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:8px;
+}
+
+h1{
+    color:#4da6ff;
+}
+
+h2{
+    color:#7ab8ff;
+}
+
+.metrics{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.metric-box{
+    background-color:#2a2a2a;
+    padding:15px;
+    border-radius:6px;
+    min-width:200px;
+}
+
+.metric-title{
+    color:#aaaaaa;
+    font-size:14px;
+}
+
+.metric-value{
+    margin-top:5px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+input[type=text]{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    margin-bottom:10px;
+    border:none;
+    border-radius:5px;
+    background-color:#2a2a2a;
+    color:white;
+}
+
+button{
+    background-color:#4da6ff;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background-color:#3d94ee;
+}
+
+.back-btn{
+    display:inline-block;
+    margin-top:10px;
+    text-decoration:none;
+    color:white;
+    background-color:#4da6ff;
+    padding:10px 15px;
+    border-radius:5px;
+}
+
+.help-text{
+    color:#b0b0b0;
+    font-size:13px;
+}
+
+.analysis{
+    background-color:#2a2a2a;
+    padding:15px;
+    border-radius:6px;
+    white-space:pre-wrap;
+    line-height:1.5;
+}
+
+.risk{
+    color:#ff6666;
+}
+
+.reward{
+    color:#66ff99;
+}
