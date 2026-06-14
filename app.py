@@ -6,11 +6,11 @@ import os
 load_dotenv()
 
 api_key=os.getenv("GEMINI_API_KEY")
-print(repr(os.getenv("GEMINI_API_KEY")))
 
-client = genai.Client(
-    api_key=api_key
-)
+if not api_key:
+    raise ValueError("GEMINI_API_KEY not found")
+
+client = genai.Client(api_key=api_key)
 
 def format_indian_currency(value):
 
@@ -49,7 +49,10 @@ def analyze():
 
         stock = yf.Ticker(symbol)
 
-        info = stock.info
+        try:
+            info = stock.info
+        except Exception:
+            return "Unable to fetch company data. Please try again."
 
         name = info.get("longName")
 
@@ -141,15 +144,10 @@ Format:
     
         try:
 
-            print("Calling Gemini...")
-
             response = client.models.generate_content(
                 model="gemini-2.5-flash",
                 contents=prompt
             )
-
-            print("Response received")
-            print(response)
 
             ai_analysis = '\n' + response.text
 
@@ -177,5 +175,10 @@ Format:
     except Exception as e:
 
         return f"Error: {e}"
+    
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", 5000))
+    )
